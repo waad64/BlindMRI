@@ -5,14 +5,14 @@ Welcome to the BlindMRI repository — a modular and extensible pipeline for str
 ## 📁 Repository Structure and Usage
 This repository is organized into three major directories, each reflecting a key phase in the stress modeling lifecycle:
 
-blindMRI_baseline/
-Initial modeling based on physiological signals and demographic metadata.
+   - blindMRI_baseline/
+              Initial modeling based on physiological signals and demographic metadata.
 
-blindMRI_env/
-Stress detection enhanced with environmental and MRI contextual factors.
+   - blindMRI_env/
+              Stress detection enhanced with environmental and MRI contextual factors.
 
-blindMRI_fine_tuned/
-Final dataset and models fine-tuned for blind patient-specific scenarios.
+   - blindMRI_fine_tuned/
+              Final dataset and models fine-tuned for blind patient-specific scenarios.
 
 Each folder includes:
 
