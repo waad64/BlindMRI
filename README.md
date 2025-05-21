@@ -1,2 +1,65 @@
-# BlindMRI
-BlindMRI is a synthetic dataset for stress detection n patients undergoing MRI scans.
+### BlindMRI : Stress Modeling with Generative AI & LLMs
+
+Welcome to the BlindMRI repository — a modular and extensible pipeline for stress detection and simulation, built with l GANs, LLM validation, and domain-informed data augmentation. This project is geared toward advancing stress state modeling, particularly in visually impaired and MRI-restricted environments.
+
+##📁 Repository Structure and Usage
+This repository is organized into three major directories, each reflecting a key phase in the stress modeling lifecycle:
+
+blindMRI_baseline/
+Initial modeling based on physiological signals and demographic metadata.
+
+blindMRI_env/
+Stress detection enhanced with environmental and MRI contextual factors.
+
+blindMRI_fine_tuned/
+Final dataset and models fine-tuned for blind patient-specific scenarios.
+
+Each folder includes:
+
+Full pipeline: data collection, preprocessing, LLM validation, cGAN-based data generation, and evaluation.
+
+Intermediate + final datasets with tracking of changes.
+
+Plot exports, metrics logs, and CSVs for reproducibility and traceability.
+
+  - A .env template for securely storing your OpenAI API key.
+
+  - A requirements.txt listing all Python dependencies.
+
+  - A README.md summarizing statistical logic.
+
+  - A PDF detailing every stage and model used in the pipeline.
+    
+## 🛠️ How to Set Up Locally
+1.Clone the repository
+
+    git clone https://github.com/waad64/BlindMRI.git
+    cd BlindMRI
+    
+2.Create and activate a virtual environment
+  On Windows:
+  
+    python -m venv venv
+    .\venv\Scripts\activate
+    
+  On macOS/Linux:
+
+    python3 -m venv venv
+    source venv/bin/activate
+    
+3.Install dependencies
+
+    pip install -r requirements.txt
+    
+4.Set up your OpenAI API key
+ -Create a .env file in the root directory (if not already there).
+
+   Add your key like this:
+   
+          OPENAI_API_KEY=your-api-key-here
+ 
+   Don't have one? Generate it form : [hhtps://openai..](https://openai.com/api/)
+
+
+🔍 For in-depth documentation, refer to the *.pdf files inside each directory — they walk through the full data/LLM/GAN lifecycle.
+   
