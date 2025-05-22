@@ -29,7 +29,9 @@ Plot exports, metrics logs, and CSVs for reproducibility and traceability.
   - A README.md summarizing statistical logic.
 
   - A PDF detailing every stage and model used in the pipeline.
-    
+
+The full code is to be integrated into an AI-agent to have full control on the pipline but  to explain the process clearly the hole pipeline is guided and checked manually to have track of every output before heading to next stage.
+In the last stage, the handeling the llm generation and checking of data besides the training GAN's files are supposed to be independant for each feature but the process is the same for stage 2 and 3 so they are gathered in one file each and the hole process in detail is detailed in the PDFs.
 ## 🛠️ How to Set Up Locally
 1.Clone the repository
 
@@ -62,4 +64,4 @@ Plot exports, metrics logs, and CSVs for reproducibility and traceability.
 
 
 🔍 For in-depth documentation, refer to the *.pdf files inside each directory — they walk through the full data/LLM/GAN lifecycle.
-Due t tha large volume of the dataset, each version for each stage is saved in a ZIP file, to see you you need to download it .   
+Due t tha large volume of the dataset, each version for each stage is saved in a ZIP file, to see you you need to download it .  
