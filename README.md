@@ -62,4 +62,4 @@ Plot exports, metrics logs, and CSVs for reproducibility and traceability.
 
 
 🔍 For in-depth documentation, refer to the *.pdf files inside each directory — they walk through the full data/LLM/GAN lifecycle.
-   
+Due t tha large volume of the dataset, each version for each stage is saved in a ZIP file, to see you you need to download it .   
