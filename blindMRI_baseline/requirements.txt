@@ -1,0 +1,16 @@
+openai
+pandas
+numpy
+python-dotenv
+tqdm
+requests
+scipy
+sickit-learn
+seaborn
+matplotlib
+scipy-stats
+boxplot
+statsmodels
+tensorflow
+keras
+transformers
