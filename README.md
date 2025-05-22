@@ -8,7 +8,7 @@ This repository is organized into three major directories, each reflecting a key
    - blindMRI_baseline/ :
               Initial modeling based on physiological signals and demographic metadata.
 
-   - blindMRI_env/ :
+   - blindMRI_envi/ :
               Stress detection enhanced with environmental and MRI contextual factors.
 
    - blindMRI_fine_tuned/ :
