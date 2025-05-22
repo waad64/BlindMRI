@@ -1,4 +1,4 @@
-### BlindMRI : Stress Modeling with Generative AI & LLMs
+### BlindMRI : Stress Modeling with Generative Models & LLMs
 
 Welcome to the BlindMRI repository — a modular and extensible pipeline for stress detection and simulation, built with l GANs, LLM validation, and domain-informed data augmentation. This project is geared toward advancing stress state modeling, particularly in visually impaired and MRI-restricted environments.
 
