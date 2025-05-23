@@ -1,0 +1,132 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "BlindMRI",
+  "description": "BlindMRI (this is the link for the dataset: https://github.com/waad64/BlindMRI) is a fully synthetic dataset designed to support research on stress modeling and response prediction in blind patients undergoing MRI procedures.\n\nIt was generated using an innovative pipeline combining LLMs and GANs.\n\nWe harness the power of LLMs not just as passive data crunchers but as intelligent co-creators in our generative pipeline. The LLM kickstarts the process by generating rich, context-aware data that guides our GAN in crafting precise, concept-driven outputs. But it doesn\u2019t stop there\u2014the LLM doubles as a discerning critic, validating each GAN output to ensure fidelity and relevance. Every training episode becomes a feedback loop, punctuated by rigorous statistical and accuracy tests powered by prompt-driven evaluations. We keep a sharp eye on the generator-discriminator loss curves, steering the model towards convergence and stability. This synergy of LLMs and GANs is our glimpse into the future of adaptive, intelligent data generation.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "@misc{waad2024blindmri, title={BlindMRI}, author={Waad64}, year={2024}, howpublished={\\url{https://github.com/waad64/BlindMRI}} }",
+  "url": "https://github.com/waad64/BlindMRI",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "blindmri-repository",
+      "name": "BlindMRI GitHub repository",
+      "description": "BlindMRI dataset hosted on GitHub by waad64.",
+      "contentUrl": "https://github.com/waad64/BlindMRI",
+      "encodingFormat": "git+https",
+      "sha256": "main"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "jsonl-files",
+      "name": "BlindMRI JSONL files",
+      "description": "JSONL files inside the BlindMRI repository.",
+      "containedIn": {
+        "@id": "blindmri-repository"
+      },
+      "encodingFormat": "application/jsonlines",
+      "includes": "data/*.jsonl"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "blindmri-jsonl",
+      "name": "BlindMRI JSONL",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "blindmri/context",
+          "name": "context",
+          "description": "Input text or prompt for the BlindMRI dataset.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "context"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "blindmri/completion",
+          "name": "completion",
+          "description": "Expected output or label for the prompt.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "completion"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "blindmri/task",
+          "name": "task",
+          "description": "The ML task, inferred from the filename.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "fileProperty": "filename"
+            },
+            "transform": {
+              "regex": "^(.*)\\.jsonl$"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
